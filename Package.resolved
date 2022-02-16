@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "NnUIKitHelpers",
+        "repositoryURL": "https://github.com/nikolainobadi/NnUIKitHelpers.git",
+        "state": {
+          "branch": "main",
+          "revision": "7123b5b6f768460bddd7736f0593d853c26507a9",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
