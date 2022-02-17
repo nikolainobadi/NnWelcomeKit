@@ -12,6 +12,11 @@ import WelcomeLogic
 public final class WelcomeKitComposite {
     private init() { }
     
+    public static func makeThanksVC(config: ThanksViewConfig) -> UIViewController {
+        
+        ThanksVC(config: config)
+    }
+    
     public static func makeWelcomeVC(config: WelcomeViewInfo,
                                      remote: WelcomeManagerRemoteAPI,
                                      alerts: WelcomeManagerAlerts,
