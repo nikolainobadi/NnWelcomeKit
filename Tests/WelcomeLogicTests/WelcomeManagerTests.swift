@@ -110,7 +110,7 @@ extension WelcomeManagerTests {
             dupeCompletion = completion
         }
         
-        func finishWelcome(username: String?,
+        func finishWelcome(username: String,
                            completion: @escaping (Error?) -> Void) {
             
             finishedCompletion = completion

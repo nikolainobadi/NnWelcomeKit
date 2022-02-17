@@ -81,6 +81,6 @@ public protocol WelcomeManagerAlerts {
 public protocol WelcomeManagerRemoteAPI {
     func checkForDuplicates(_ name: String,
                             completion: @escaping (Error?) -> Void)
-    func finishWelcome(username: String?,
+    func finishWelcome(username: String,
                        completion: @escaping (Error?) -> Void)
 }
