@@ -30,7 +30,7 @@ public final class ThanksVC: NnViewController {
         self.config = config
         super.init(hasTextFields: false)
         
-        view.backgroundColor = config.baackgroundColor
+        view.backgroundColor = config.backgroundColor
     }
     
     
@@ -50,8 +50,17 @@ public final class ThanksVC: NnViewController {
 
 
 // MARK: - Dependencies
-public protocol ThanksViewConfig {
-    var titleText: String { get }
-    var titleColor: UIColor? { get }
-    var baackgroundColor: UIColor? { get }
+public struct ThanksViewConfig {
+    public var titleText: String
+    public var titleColor: UIColor?
+    public var backgroundColor: UIColor?
+    
+    public init(titleText: String = "Thank You",
+                titleColor: UIColor? = .label,
+                backgroundColor: UIColor? = .systemBackground) {
+        
+        self.titleText = titleText
+        self.titleColor = titleColor
+        self.backgroundColor = backgroundColor
+    }
 }

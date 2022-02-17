@@ -35,31 +35,12 @@ extension WelcomeRootViewTests {
     func makeSUT(finished: @escaping () -> Void = { },
                  file: StaticString = #filePath, line: UInt = #line) -> WelcomeRootView {
         
-        let sut = WelcomeRootView(config: makeInfo(),
+        let sut = WelcomeRootView(config: WelcomeViewInfo(),
                                   finished: finished)
 
         trackForMemoryLeaks(sut, file: file, line: line)
         
         return sut
     }
-    
-    func makeInfo() -> WelcomeViewInfo {
-        TestWelcomeViewInfo()
-    }
 }
 
-
-// MARK: - Helpers
-extension WelcomeRootViewTests {
-    
-    struct TestWelcomeViewInfo: WelcomeViewInfo {
-        var details: String = "details"
-        var showField: Bool = true
-        var titleText: String = "title"
-        var titleColor: UIColor? = .white
-        var buttonText: String = "button"
-        var buttonTextColor: UIColor? = .white
-        var buttonColor: UIColor? = .black
-        var backgroundColor: UIColor? = .systemBackground
-    }
-}

@@ -1,16 +1,8 @@
 //
-//  File.swift
+//  WelcomeVCWelcomeVC.swift
 //  
 //
 //  Created by Nikolai Nobadi on 2/15/22.
-//
-
-//
-//  WelcomeVC.swift
-//  iGetGroceries
-//
-//  Created by Nikolai Nobadi on 2/15/22.
-//  Copyright © 2022 Nikolai Nobadi. All rights reserved.
 //
 
 import UIKit

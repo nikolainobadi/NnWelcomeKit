@@ -7,13 +7,32 @@
 
 import UIKit
 
-public protocol WelcomeViewInfo {
-    var details: String { get }
-    var showField: Bool { get }
-    var titleText: String { get }
-    var titleColor: UIColor? { get }
-    var buttonText: String { get }
-    var buttonTextColor: UIColor? { get }
-    var buttonColor: UIColor? { get }
-    var backgroundColor: UIColor? { get }
+public struct WelcomeViewInfo {
+    public var details: String
+    public var showField: Bool
+    public var titleText: String
+    public var titleColor: UIColor?
+    public var buttonText: String
+    public var buttonTextColor: UIColor?
+    public var buttonColor: UIColor?
+    public var backgroundColor: UIColor?
+    
+    public init(details: String = "",
+                showField: Bool = true,
+                titleText: String = "Welcome",
+                titleColor: UIColor? = .label,
+                buttonText: String = "Okay",
+                buttonTextColor: UIColor? = .systemBackground,
+                buttonColor: UIColor? = .label,
+                backgroundColor: UIColor? = .systemBackground) {
+        
+        self.details = details
+        self.showField = showField
+        self.titleText = titleText
+        self.titleColor = titleColor
+        self.buttonText = buttonText
+        self.buttonTextColor = buttonTextColor
+        self.buttonColor = buttonColor
+        self.backgroundColor = backgroundColor
+    }
 }
