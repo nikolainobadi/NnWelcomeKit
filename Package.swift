@@ -37,7 +37,7 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "WelcomeLogicTests",
-            dependencies: ["WelcomeLogic"]),
+            dependencies: ["WelcomeLogic", "TestHelpers"]),
         .target(
             name: "TestHelpers",
             dependencies: []),

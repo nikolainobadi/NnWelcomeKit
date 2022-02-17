@@ -5,7 +5,7 @@
 //  Created by Nikolai Nobadi on 2/15/22.
 //
 
-final class WelcomeManager {
+public final class WelcomeManager {
     
     // MARK: - Properties
     private let remote: WelcomeManagerRemoteAPI
@@ -15,10 +15,10 @@ final class WelcomeManager {
     
     
     // MARK: - Init
-    init(remote: WelcomeManagerRemoteAPI,
-         alerts: WelcomeManagerAlerts,
-         usernameRequired: Bool,
-         finished: @escaping () -> Void) {
+    public init(remote: WelcomeManagerRemoteAPI,
+                alerts: WelcomeManagerAlerts,
+                usernameRequired: Bool,
+                finished: @escaping () -> Void) {
         
         self.remote = remote
         self.alerts = alerts
@@ -31,7 +31,7 @@ final class WelcomeManager {
 // MARK: UIResponder
 extension WelcomeManager {
 
-    func finishWelcome(_ name: String) {
+    public func finishWelcome(_ name: String) {
         validateUsername(name) { [weak self] in
             self?.uploadWelcomeData(name)
         }
@@ -47,8 +47,11 @@ private extension WelcomeManager {
         guard usernameRequired else { return completion() }
         
         remote.checkForDuplicates(name) { [weak self] error in
+            
             if let error = error {
                 self?.showError(error)
+            } else {
+                completion()
             }
         }
     }
@@ -74,6 +77,7 @@ private extension WelcomeManager {
 public protocol WelcomeManagerAlerts {
     func showError(_ error: Error)
 }
+
 public protocol WelcomeManagerRemoteAPI {
     func checkForDuplicates(_ name: String,
                             completion: @escaping (Error?) -> Void)
