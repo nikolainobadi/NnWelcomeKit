@@ -31,12 +31,15 @@ let package = Package(
             dependencies: ["WelcomeLogic", "NnUIKitHelpers"]),
         .testTarget(
             name: "WelcomeUITests",
-            dependencies: ["WelcomeUI"]),
+            dependencies: ["WelcomeUI", "TestHelpers"]),
         .target(
             name: "WelcomeLogic",
             dependencies: []),
         .testTarget(
             name: "WelcomeLogicTests",
             dependencies: ["WelcomeLogic"]),
+        .target(
+            name: "TestHelpers",
+            dependencies: []),
     ]
 )

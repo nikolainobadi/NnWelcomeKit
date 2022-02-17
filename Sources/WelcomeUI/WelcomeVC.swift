@@ -16,7 +16,7 @@
 import UIKit
 import NnUIKitHelpers
 
-final class WelcomeVC: NnViewController {
+public final class WelcomeVC: NnViewController {
     
     // MARK: - Properties
     private let rootView: UIView
@@ -24,9 +24,9 @@ final class WelcomeVC: NnViewController {
     
     
     // MARK: - Init
-    init(rootView: UIView,
-         isPresentedModally: Bool,
-         fieldsToObserver: [UITextField]) {
+    public init(rootView: UIView,
+                isPresentedModally: Bool,
+                fieldsToObserver: [UITextField]) {
         
         self.rootView = rootView
         self.isPresentedModally = isPresentedModally
@@ -35,13 +35,13 @@ final class WelcomeVC: NnViewController {
     
     
     // MARK: - Life Cycle
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         isModalInPresentation = isPresentedModally
     }
     
-    override func loadView() {
+    public override func loadView() {
         view = rootView
     }
 }

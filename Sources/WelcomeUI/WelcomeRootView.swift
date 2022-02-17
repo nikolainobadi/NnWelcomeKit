@@ -57,7 +57,7 @@ public final class WelcomeRootView: NnView {
         self.finished = finished
         super.init(frame: .zero, color: config.backgroundColor)
         
-        usernameField.inputAccessoryView = toolBar
+        configureView()
     }
     
     
@@ -104,6 +104,7 @@ private extension WelcomeRootView {
     func configureView() {
         detailsLabel.text = config.details
         usernameField.alpha = config.showField ? 1 : 0
+        usernameField.inputAccessoryView = toolBar
     }
     
     func makeToolBar() -> TextFieldToolBar {
