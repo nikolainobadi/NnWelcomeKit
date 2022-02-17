@@ -16,7 +16,7 @@ public final class ThanksVC: NnViewController {
     
     // MARK: - Views
     lazy var titleLabel: UILabel = {
-        UILabel()
+        UILabel(config.titleText)
             .autoSize()
             .addShadow()
             .setAlignment(.center)
