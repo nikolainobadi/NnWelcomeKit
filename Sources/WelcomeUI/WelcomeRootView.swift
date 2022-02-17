@@ -12,7 +12,7 @@ public final class WelcomeRootView: NnView {
     
     // MARK: - Properties
     private let config: WelcomeViewInfo
-    private let finished: () -> Void
+    private let finished: (String) -> Void
     
     
     // MARK: - Views
@@ -33,7 +33,7 @@ public final class WelcomeRootView: NnView {
             .setFontByStyle(.detail, fontName: .thonburi)
     }()
     
-    lazy var usernameField: ShadowField = {
+    public lazy var usernameField: ShadowField = {
         ShadowField("enter username...", withErrorLabel: true)
     }()
     
@@ -46,13 +46,13 @@ public final class WelcomeRootView: NnView {
             .setColor(config.buttonTextColor,
                       backgroundColor: config.buttonColor)
             .setAction { [weak self] in
-                self?.finished()
+                self?.sendText()
             }
     }()
     
     
     // MARK: - Init
-    public init(config: WelcomeViewInfo, finished: @escaping () -> Void) {
+    public init(config: WelcomeViewInfo, finished: @escaping (String) -> Void) {
         self.config = config
         self.finished = finished
         super.init(frame: .zero, color: config.backgroundColor)
@@ -107,9 +107,13 @@ private extension WelcomeRootView {
         usernameField.inputAccessoryView = toolBar
     }
     
+    func sendText() {
+        finished(usernameField.text ?? "")
+    }
+    
     func makeToolBar() -> TextFieldToolBar {
         TextFieldToolBar { [weak self] in
-            self?.finished()
+            self?.sendText()
         } onCancelTapped: { [weak self] in
             self?.endEditing(true)
         }
